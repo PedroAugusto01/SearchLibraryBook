@@ -1,0 +1,6 @@
+framework module Pods_LibarySearchTests {
+  umbrella header "Pods-LibarySearchTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
