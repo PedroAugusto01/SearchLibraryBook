@@ -10,13 +10,13 @@
         <!--View Primary-->
         <scene sceneID="TDw-Du-f4k">
             <objects>
-                <viewController title="View Primary" id="6Q2-Bu-ZUT" customClass="PrimaryScreenViewController" customModule="LibarySearch" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bgB-4H-OqE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController title="View Primary" id="6Q2-Bu-ZUT" customClass="ScreenBookDetailsViewController" customModule="LibarySearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="segue" id="bgB-4H-OqE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-Book List " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQH-y3-OPS">
-                                <rect key="frame" x="134" y="44" width="158" height="36"/>
+                                <rect key="frame" x="134" y="0.0" width="158" height="36"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="9nX-zs-8rE"/>
@@ -26,18 +26,7 @@
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sX-V4-TMr">
-                                <rect key="frame" x="330" y="44" width="64" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Nz7-XT-WUB"/>
-                                    <constraint firstAttribute="width" constant="64" id="ybs-kn-nk7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Search">
-                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YXl-Y3-CgM" customClass="CellBook">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YXl-Y3-CgM" customClass="CellBook">
                                 <rect key="frame" x="20" y="88" width="374" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -52,10 +41,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NZX-TO-oYL" customClass="UIImageViewBook">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NZX-TO-oYL">
                                                     <rect key="frame" x="20" y="11" width="100" height="100"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8m-OG-iHK" customClass="UILabelRequestName">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8m-OG-iHK">
                                                     <rect key="frame" x="187" y="51" width="167" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="167" id="Py4-o4-Sq0"/>
@@ -102,14 +91,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xl6-ge-wpJ" firstAttribute="trailing" secondItem="QQH-y3-OPS" secondAttribute="trailing" constant="122" id="4is-NF-ez6"/>
                             <constraint firstItem="QQH-y3-OPS" firstAttribute="top" secondItem="xl6-ge-wpJ" secondAttribute="top" id="4mP-qE-4Mm"/>
-                            <constraint firstItem="2sX-V4-TMr" firstAttribute="top" secondItem="xl6-ge-wpJ" secondAttribute="top" id="Ij0-WX-9VR"/>
-                            <constraint firstItem="2sX-V4-TMr" firstAttribute="leading" secondItem="QQH-y3-OPS" secondAttribute="trailing" constant="38" id="Ity-Rx-Lsv"/>
-                            <constraint firstItem="xl6-ge-wpJ" firstAttribute="trailing" secondItem="2sX-V4-TMr" secondAttribute="trailing" constant="20" id="IvN-Zf-Mok"/>
                             <constraint firstItem="YXl-Y3-CgM" firstAttribute="top" secondItem="xl6-ge-wpJ" secondAttribute="top" constant="44" id="JNq-Dr-hIN"/>
-                            <constraint firstItem="2sX-V4-TMr" firstAttribute="leading" secondItem="QQH-y3-OPS" secondAttribute="trailing" constant="38" id="PZz-lf-HQk"/>
                             <constraint firstItem="xl6-ge-wpJ" firstAttribute="trailing" secondItem="YXl-Y3-CgM" secondAttribute="trailing" constant="20" id="VH1-4g-vIk"/>
-                            <constraint firstItem="YXl-Y3-CgM" firstAttribute="top" secondItem="2sX-V4-TMr" secondAttribute="bottom" constant="4" id="VLD-RQ-0TB"/>
                             <constraint firstItem="YXl-Y3-CgM" firstAttribute="bottom" secondItem="xl6-ge-wpJ" secondAttribute="bottom" id="Xd4-0N-TrO"/>
                             <constraint firstItem="YXl-Y3-CgM" firstAttribute="leading" secondItem="xl6-ge-wpJ" secondAttribute="leading" constant="20" id="kB2-ND-YuQ"/>
                             <constraint firstItem="YXl-Y3-CgM" firstAttribute="top" secondItem="QQH-y3-OPS" secondAttribute="bottom" constant="8" id="mqY-WU-9NM"/>
@@ -119,6 +104,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="idu-Va-PMy"/>
                     <connections>
+                        <outlet property="titleLabel" destination="n8m-OG-iHK" id="fr1-2T-OgF"/>
                         <outlet property="view" destination="bgB-4H-OqE" id="Qob-nh-oxx"/>
                     </connections>
                 </viewController>
@@ -150,6 +136,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="6Q2-Bu-ZUT" kind="show" identifier="seque" id="9Ow-0B-0Ug"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

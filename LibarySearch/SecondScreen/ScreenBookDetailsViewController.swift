@@ -5,17 +5,19 @@
 //  Created by Pedro Augusto Marques de Souza on 03/04/20.
 //  Copyright © 2020 Pedro Augusto Marques de Souza. All rights reserved.
 //
-import Foundation
 import Alamofire
+import UIKit
 
 
 
 
-class PrimaryScreenViewController: UIViewController {
-        
+class ScreenBookDetailsViewController: UIViewController{
     
+   @IBOutlet weak var titleLabel: UILabel!
     
-        override func viewDidLoad() {
+    var book: LibraryResult?
+
+            override func viewDidLoad() {
             super.viewDidLoad()
         }
 

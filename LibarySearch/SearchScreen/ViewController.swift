@@ -10,15 +10,17 @@ import UIKit
 import Alamofire
 import Foundation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
-   
+
     @IBOutlet weak var MyTableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var  bookArray: BookArrayList?
-   
+    var bookArray: BookArrayList?
+    var myIndex = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +28,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         MyTableView.dataSource = self
         MyTableView.delegate = self
         searchBar.delegate = self
-        
-        
     }
     
     
+    //MARK:- Table View Cells
     func numberOfSections(in tableView: UITableView) -> Int {
            return 1
        }
@@ -45,6 +46,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
         
        }
+    
+    //MARK:- Search bar
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        BooksRequest().fetchBookLisxtWith(searchText, resultLimit: 10) { bookList in
+          self.bookArray = bookList
+          self.MyTableView.reloadData()
+          }
+    }
+    
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let book = bookListViewModel?.getBook(at: indexPath.row)
+        performSegue(withIdentifier:"segue" , sender: self)
+    }*/
+    
+    //MARK:- Next screen and save cell text clicked
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "seque" {
+             let vc = segue.destination as! ScreenBookDetailsViewController
+            if let cell = sender as? UITableViewCell{
+                let indexPath = self.MyTableView.indexPath(for: cell)
+                vc.book = bookArray?.books[indexPath!.row]
+            }
+        }
+    }
+    
     
 
     
