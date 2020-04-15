@@ -10,24 +10,24 @@ import Foundation
 
 struct BookArrayList: Decodable {
     
-    let books: [LibraryResult]
+    let books: [BookLibraryResult]
     let resultCount: Int
     
     enum CodingKeys: String, CodingKey {
-        case kBooks = "results"
-        case kResultCount = "resultCount"
+        case listBook = "results"
+        case listResultCount = "resultCount"
     }
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        books = try values.decode([LibraryResult].self, forKey: .kBooks)
-        resultCount = try values.decode(Int.self, forKey: .kResultCount)
+        books = try values.decode([BookLibraryResult].self, forKey: .listBook)
+        resultCount = try values.decode(Int.self, forKey: .listResultCount)
     }
 }
 
 
 
-struct LibraryResult:Decodable {
+struct BookLibraryResult:Decodable {
     var artworkUrl100:URL?
     var trackName: String
     var description: String?

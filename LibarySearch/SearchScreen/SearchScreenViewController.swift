@@ -11,7 +11,7 @@ import Alamofire
 import Foundation
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
+class SearchScreenController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
     
 
     @IBOutlet weak var MyTableView: UITableView!
@@ -50,16 +50,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK:- Search bar
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        BooksRequest().fetchBookLisxtWith(searchText, resultLimit: 10) { bookList in
+        BooksRequest().fetchBookLisxtWith(searchText, resultLimit: 15) { bookList in
           self.bookArray = bookList
           self.MyTableView.reloadData()
           }
     }
     
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let book = bookListViewModel?.getBook(at: indexPath.row)
-        performSegue(withIdentifier:"segue" , sender: self)
-    }*/
     
     //MARK:- Next screen and save cell text clicked
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -71,14 +67,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
         }
     }
+}
     
-    
+//MARK:- Ignore
 
-    
-
-    
-    
-    
   // @IBAction func searchButtonTap(_ sender: UIButton) {
         
        /* if textField.text == ""{
@@ -116,7 +108,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let searc = search[indexPath.row]
         cell.textLabel?.text = searc
     }*/
-    
-    
-}
-
